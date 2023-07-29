@@ -1,0 +1,200 @@
+programs/interpreter.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 51 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/ds_label_hash.c:63:5: warning: Either the condition 'new_node==NULL' is redundant or there is possible null pointer dereference: new_node. [nullPointerRedundantCheck]
+    new_node->label = label;
+    ^
+src/ds_label_hash.c:59:18: note: Assuming that condition 'new_node==NULL' is not redundant
+    if (new_node == NULL) {
+                 ^
+src/ds_label_hash.c:63:5: note: Null pointer dereference
+    new_node->label = label;
+    ^
+src/ds_label_hash.c:64:5: warning: Either the condition 'new_node==NULL' is redundant or there is possible null pointer dereference: new_node. [nullPointerRedundantCheck]
+    new_node->point = app->program.tail;
+    ^
+src/ds_label_hash.c:59:18: note: Assuming that condition 'new_node==NULL' is not redundant
+    if (new_node == NULL) {
+                 ^
+src/ds_label_hash.c:64:5: note: Null pointer dereference
+    new_node->point = app->program.tail;
+    ^
+src/ds_label_hash.c:65:5: warning: Either the condition 'new_node==NULL' is redundant or there is possible null pointer dereference: new_node. [nullPointerRedundantCheck]
+    new_node->cpumode = app->program.last_cpu;
+    ^
+src/ds_label_hash.c:59:18: note: Assuming that condition 'new_node==NULL' is not redundant
+    if (new_node == NULL) {
+                 ^
+src/ds_label_hash.c:65:5: note: Null pointer dereference
+    new_node->cpumode = app->program.last_cpu;
+    ^
+src/ds_procedure_lifo.c:50:5: warning: Either the condition 'procedure==NULL' is redundant or there is possible null pointer dereference: procedure. [nullPointerRedundantCheck]
+    procedure->prev = app->program.stack;
+    ^
+src/ds_procedure_lifo.c:46:19: note: Assuming that condition 'procedure==NULL' is not redundant
+    if (procedure == NULL) {
+                  ^
+src/ds_procedure_lifo.c:50:5: note: Null pointer dereference
+    procedure->prev = app->program.stack;
+    ^
+src/ds_procedure_lifo.c:51:5: warning: Either the condition 'procedure==NULL' is redundant or there is possible null pointer dereference: procedure. [nullPointerRedundantCheck]
+    procedure->remember = app->program.curr;
+    ^
+src/ds_procedure_lifo.c:46:19: note: Assuming that condition 'procedure==NULL' is not redundant
+    if (procedure == NULL) {
+                  ^
+src/ds_procedure_lifo.c:51:5: note: Null pointer dereference
+    procedure->remember = app->program.curr;
+    ^
+src/ds_procedure_lifo.c:65:29: warning: Either the condition 'app->program.stack==NULL' is redundant or there is possible null pointer dereference: app->program.stack. [nullPointerRedundantCheck]
+    procedure = app->program.stack->prev;
+                            ^
+src/ds_procedure_lifo.c:61:28: note: Assuming that condition 'app->program.stack==NULL' is not redundant
+    if (app->program.stack == NULL) {
+                           ^
+src/ds_procedure_lifo.c:65:29: note: Null pointer dereference
+    procedure = app->program.stack->prev;
+                            ^
+src/ds_procedure_lifo.c:66:29: warning: Either the condition 'app->program.stack==NULL' is redundant or there is possible null pointer dereference: app->program.stack. [nullPointerRedundantCheck]
+    line_node = app->program.stack->remember;
+                            ^
+src/ds_procedure_lifo.c:61:28: note: Assuming that condition 'app->program.stack==NULL' is not redundant
+    if (app->program.stack == NULL) {
+                           ^
+src/ds_procedure_lifo.c:66:29: note: Null pointer dereference
+    line_node = app->program.stack->remember;
+                            ^
+src/ds_program_fifo.c:98:17: warning: Either the condition 'new_line_node==NULL' is redundant or there is possible null pointer dereference: app->program.tail. [nullPointerRedundantCheck]
+    app->program.tail->next = NULL;
+                ^
+src/ds_program_fifo.c:77:23: note: Assuming that condition 'new_line_node==NULL' is not redundant
+    if (new_line_node == NULL) {
+                      ^
+src/ds_program_fifo.c:97:25: note: Assignment 'app->program.tail=new_line_node', assigned value is 0
+    app->program.tail = new_line_node;
+                        ^
+src/ds_program_fifo.c:98:17: note: Null pointer dereference
+    app->program.tail->next = NULL;
+                ^
+src/ds_program_fifo.c:99:17: warning: Either the condition 'new_line_node==NULL' is redundant or there is possible null pointer dereference: app->program.tail. [nullPointerRedundantCheck]
+    app->program.tail->line = app->program.last_line;
+                ^
+src/ds_program_fifo.c:77:23: note: Assuming that condition 'new_line_node==NULL' is not redundant
+    if (new_line_node == NULL) {
+                      ^
+src/ds_program_fifo.c:97:25: note: Assignment 'app->program.tail=new_line_node', assigned value is 0
+    app->program.tail = new_line_node;
+                        ^
+src/ds_program_fifo.c:99:17: note: Null pointer dereference
+    app->program.tail->line = app->program.last_line;
+                ^
+src/ds_program_fifo.c:108:25: style: The scope of the variable 'prev' can be reduced. [variableScope]
+    struct line_node_s* prev;
+                        ^
+src/driver_program.c:83:5: warning: snprintf format string requires 2 parameters but 3 are given. [wrongPrintfScanfArgNum]
+    snprintf(error_code_string, sizeof(error_header), error_header, app->id,
+    ^
+programs/libary.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 51 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+programs/tests.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_custom.c:53:48: warning: Function 'driver_custom_set' argument order different: declaration 'cpu_mode, reg, , ' definition 'app, cpu_mode, reg, lambda' [funcArgOrderDifferent]
+void driver_custom_set(struct app_3bc_s* const app, cpumode_3bc_t cpu_mode,
+                                               ^
+src/3bc_header.h:179:19: note: Function 'driver_custom_set' argument order different: declaration 'cpu_mode, reg, , ' definition 'app, cpu_mode, reg, lambda'
+    cpumode_3bc_t cpu_mode, register_3bc_t reg, function_3bc_t lambda);
+                  ^
+src/driver_custom.c:53:48: note: Function 'driver_custom_set' argument order different: declaration 'cpu_mode, reg, , ' definition 'app, cpu_mode, reg, lambda'
+void driver_custom_set(struct app_3bc_s* const app, cpumode_3bc_t cpu_mode,
+                                               ^
+src/cpu_boolean.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/cpu_common.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/cpu_jump.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/cpu_math.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 53 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/cpu_memory.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/cpu_procedure.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/cpu_sleep.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/cpu_string.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_accumulator.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_custom.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 52 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_gpio.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_idle.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 53 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_interrupt.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_memory.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_mode.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_power.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 55 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_program.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 54 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/driver_program.c:83:5: warning: %u in format string (no. 3) requires 'unsigned int' but the argument type is 'signed int'. [invalidPrintfArgType_uint]
+    snprintf(error_code_string, sizeof(error_header), error_header, app->id,
+    ^
+src/driver_tty.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 55 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/ds_hypervisor_darray.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/ds_label_hash.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/ds_memory_llrbt.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/ds_procedure_lifo.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/ds_program_fifo.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 50 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/interpreter_parser.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 52 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/interpreter_readln.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 51 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/interpreter_syntax.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 51 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/interpreter_ticket.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 53 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+src/interpreter_tokens.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 51 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+
